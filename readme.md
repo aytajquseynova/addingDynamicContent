@@ -1,0 +1,1 @@
+- adding dynamic content with variables
