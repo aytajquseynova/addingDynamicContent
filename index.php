@@ -22,8 +22,8 @@ $comments2 = 236;
 $likes2 = 1023;
 $is_active2 = false;
 
-define("heading1", $filmName1);
-define("heading2", $filmName2);
+define("heading", "Popular filmler");
+
 
 $capitalize1 = ucfirst($filmabout1);
 $arr1 = explode(" ", $capitalize1);
@@ -51,7 +51,7 @@ $newArr2 = implode(" ", $splice) . "...";
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " >
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><?= $categories ?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,11 +76,14 @@ $newArr2 = implode(" ", $splice) . "...";
         </div>
     </nav>
     <div class="d-flex ">
+        <h1 > <?=  heading ?></h1>
+        <hr>
         <div class="col-6 ">
             <div class="card" style="width: 18rem;">
                 <img src="./images/paperlives.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
                 <div class="card-body">
-                    <h1 class="card-title"><?= heading1 ?></h1>
+                    <h5 class="card-title"><?= $filmName1 ?></h5>
+
                     <p class="card-text">
                         <?= $newArr1  ?>
                     </p>
@@ -103,7 +106,7 @@ $newArr2 = implode(" ", $splice) . "...";
                 <img src="./images/walkingdead.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
 
                 <div class="card-body">
-                    <h1 class="card-title"><?= heading2 ?></h1>
+                    <h5 class="card-title"><?= $filmName2 ?></h5>
                     <p class="card-text">
                         <?= $newArr2 ?>
 
