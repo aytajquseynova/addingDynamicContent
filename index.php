@@ -1,36 +1,56 @@
 <?php
 
 $categories = "Kategoriler";
+
+$filmler = array(
+  "1" => [
+    "name" => "Paper Lives",
+    "about" => "kagit toplayarak gecinen ve sagligi giderek kotulesen Mehmet terk edilmis bir cocuk bulur",
+    "date" => new DateTime("2021-12-03"),
+    "comments" => 23,
+    "likes" => 106,
+    "is_active" => true
+  ],
+    "2" => [
+        "name" => "Walking Dead",
+        "about" => "Zombi kiyametinin ardindan hayatta kalanlar",
+        "date" => new DateTime("2010-10-31"),
+        "comments" => 236,
+        "likes" => 1023,
+        "is_active" => false
+    ]
+
+);
 $category1 = "macera";
 $category2 = "dram";
 $category3 = "komedi";
 $category4 = "korku";
 
 $films1 = "Film 1:";
-$filmName1 = "Paper Lives";
-$filmabout1 = "kagit toplayarak gecinen ve sagligi giderek kotulesen Mehmet terk edilmis bir cocuk bulur";
-$filmDate1 = new DateTime("2021-12-03");
-$comments1 = 23;
-$likes1 = 106;
-$is_active1 = true;
+// $filmName1 = "Paper Lives";
+// $filmabout1 = "kagit toplayarak gecinen ve sagligi giderek kotulesen Mehmet terk edilmis bir cocuk bulur";
+// $filmDate1 = new DateTime("2021-12-03");
+// $comments1 = 23;
+// $likes1 = 106;
+// $is_active1 = true;
 
 $films2 = "Film 2:";
-$filmName2 = "Walking Dead";
-$filmabout2 = "Zombi kiyametinin ardindan hayatta kalanlar";
-$filmDate2 = new DateTime("2010-10-31");
-$comments2 = 236;
-$likes2 = 1023;
-$is_active2 = false;
+// $filmName2 = "Walking Dead";
+// $filmabout2 = "Zombi kiyametinin ardindan hayatta kalanlar";
+// $filmDate2 = new DateTime("2010-10-31");
+// $comments2 = 236;
+// $likes2 = 1023;
+// $is_active2 = false;
 
 define("heading", "Popular filmler");
 
 
-$capitalize1 = ucfirst($filmabout1);
+$capitalize1 = ucfirst($filmler["1"]["about"]);
 $arr1 = explode(" ", $capitalize1);
 $splice = array_slice($arr1, 0, 10);
 $newArr1 = implode(" ", $splice) . "...";
 
-$capitalize2 = ucfirst($filmabout2);
+$capitalize2 = ucfirst($filmler["2"]["about"]);
 $arr2 = explode(" ", $capitalize2);
 $splice = array_slice($arr2, 0, 5);
 $newArr2 = implode(" ", $splice) . "...";
@@ -82,18 +102,18 @@ $newArr2 = implode(" ", $splice) . "...";
             <div class="card" style="width: 18rem;">
                 <img src="./images/paperlives.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $filmName1 ?></h5>
+                    <h5 class="card-title"><? $filmler["1"]["name"] ?></h5>
 
                     <p class="card-text">
                         <?= $newArr1  ?>
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?= "Yapim tarihi: " . $filmDate1->format('d.m.y') ?></li>
-                    <li class="list-group-item"><?= "Yorum sayisi: " . $comments1 ?></li>
-                    <li class="list-group-item"><?= "Begeni sayisi: " . $likes1 ?></li>
+                    <li class="list-group-item"><?= "Yapim tarihi: " . $filmler["1"]["date"]->format('d.m.y') ?></li>
+                    <li class="list-group-item"><?= "Yorum sayisi: " . $filmler["1"]["comments"]  ?></li>
+                    <li class="list-group-item"><?= "Begeni sayisi: " . $filmler["1"]["likes"]  ?></li>
                     <li class="list-group-item">Vizyonda olma durumu:
-                        <?php if ($is_active1) {
+                        <?php if ($filmler["1"]["is_active"]) {
                             echo "evet";
                         } else {
                             echo "hayir";
@@ -106,18 +126,18 @@ $newArr2 = implode(" ", $splice) . "...";
                 <img src="./images/walkingdead.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
 
                 <div class="card-body">
-                    <h5 class="card-title"><?= $filmName2 ?></h5>
+                    <h5 class="card-title"><? $filmler["2"]["name"] ?></h5>
                     <p class="card-text">
                         <?= $newArr2 ?>
 
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?= "Yapim tarihi: " . $filmDate2->format('d.m.y') ?></li>
-                    <li class="list-group-item"><?= "Yorum sayisi: " . $comments2 ?></li>
-                    <li class="list-group-item"><?= "Begeni sayisi: " . $likes2 ?></li>
+                    <li class="list-group-item"><?= "Yapim tarihi: " . $filmler["2"]["date"]->format('d.m.y') ?></li>
+                    <li class="list-group-item"><?= "Yorum sayisi: " . $filmler["2"]["likes"]?></li>
+                    <li class="list-group-item"><?= "Begeni sayisi: " . $filmler["2"]["likes"] ?></li>
                     <li class="list-group-item">Vizyonda olma durumu:
-                        <?php if ($is_active2) {
+                        <?php if ($filmler["2"]["is_active"]) {
                             echo "evet";
                         } else {
                             echo "hayir";
