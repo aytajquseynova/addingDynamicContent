@@ -8,7 +8,7 @@ $category4 = "korku";
 
 $films1 = "Film 1:";
 $filmName1 = "Paper Lives";
-$filmabout1 = "Kagit toplayarak gecinen ve sagligi giderek kotulesen Mehmet terk edilmis bir cocuk bulur";
+$filmabout1 = "kagit toplayarak gecinen ve sagligi giderek kotulesen mehmet terk edilmis bir cocuk bulur";
 $filmDate1 = new DateTime("2021-12-03");
 $comments1 = 23;
 $likes1 = 106;
@@ -22,8 +22,10 @@ $comments2 = 236;
 $likes2 = 1023;
 $is_active2 = false;
 
+define("heading1", $filmName1);
+define("heading2", $filmName2);
 
-// echo $filmDate->format('Y-m-d'); // Output: 2021-12-03
+
 
 ?>
 
@@ -68,8 +70,16 @@ $is_active2 = false;
             <div class="card" style="width: 18rem;">
                 <img src="./images/paperlives.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $filmName1 ?></h5>
-                    <p class="card-text"><?php echo $filmabout1 ?></p>
+                    <h1 class="card-title"><?php echo heading1 ?></h1>
+                    <p class="card-text">
+                        <?php
+                        $capitalize1 = ucfirst($filmabout1);
+                        $arr1 = explode(" ", $capitalize1);
+                        $splice = array_slice($arr1, 0, 10);
+                        $newArr1 = implode(" ", $splice);
+                        echo ($newArr1)
+                        ?>
+                    </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><?php echo "Yapim tarihi: " . $filmDate1->format('d.m.y') ?></li>
@@ -89,8 +99,17 @@ $is_active2 = false;
                 <img src="./images/walkingdead.jpeg" class="card-img-top img-fluid mx-auto" alt="..." style="width: 250px; height: 250px;">
 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $filmName2 ?></h5>
-                    <p class="card-text"><?php echo $filmabout2 ?></p>
+                    <h1 class="card-title"><?php echo heading2 ?></h1>
+                    <p class="card-text">
+                        <?php
+                        $capitalize2 = ucfirst($filmabout2);
+                        $arr2 = explode(" ", $capitalize2);
+                        $splice = array_slice($arr2, 0, 5);
+                        $newArr2 = implode(" ", $splice);
+                        echo ($newArr2)
+                        ?>
+
+                    </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><?php echo "Yapim tarihi: " . $filmDate2->format('d.m.y') ?></li>
